@@ -1,0 +1,29 @@
+@using UmbracoRepo.Web.Extensions
+@using UmbracoRepo.Web.Enums
+@inherits UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem<UmbracoRepo.Web.Models.PublishedContent.Hero>>
+@if (Model.Content is { } hero)
+{
+    var imageLayout = Model.GetImageLayout();
+    var isFullWidth = imageLayout is HeroImageLayout.Fullwidth;
+    var imageIsAside = imageLayout is HeroImageLayout.Left or HeroImageLayout.Right;
+    string bgString = imageLayout is HeroImageLayout.None || hero.Image?.GetCropUrl(isFullWidth ? "16:9" :"5:7") is not { } cropUrl ?
+        null : $"background-image: url({cropUrl});";
+    <div class="hero min-h-screen @(isFullWidth ? "bg-base-200" : null)" style="@bgString">
+        <div class="hero-content @(isFullWidth ? "text-neutral-content " : null)@(!imageIsAside ? "text-center " : $" flex-col {(imageLayout is HeroImageLayout.Left ? "lg:flex-row" : "lg:flex-row-reverse")}")">
+            <div class="@(imageIsAside ? "max-w-md" : null)">
+                @if (!string.IsNullOrWhiteSpace(hero.Title))
+                {
+                    <h1 class="text-5xl font-bold @(isFullWidth ? "mb-5" : null)">@hero.Title</h1>
+                }
+                @if (!string.IsNullOrWhiteSpace(hero.Content))
+                {
+                    <p class="@(isFullWidth ? "mb-5" : "py-6")">@hero.Content</p>
+                }
+                @if (hero.Link is { } link)
+                {
+                    <a href="@link.Url" target="@link.Target" class="btn btn-primary">@link.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+}

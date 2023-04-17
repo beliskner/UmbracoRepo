@@ -1,0 +1,12 @@
+<div class="blockelement__draggable-element" ng-controller="UmbracoRepo.Controllers.BlockPreviewController">
+    <button type="button" class="btn umb-button__button btn-success umb-button-- umb-outline" ng-click="translate(block)">
+        PLEASE TO TRANSLATE, MAYBE WITH DEEPL? CHATGPT???
+    </button>
+    <div class="preview-wrapper" ng-click="block.edit()">
+        <div ng-if="loading === false"
+             ng-bind-html="markup"
+             settings="block.settingsData"
+             style="pointer-events:none; max-width: 784px;"
+        ></div>
+    </div>
+</div>

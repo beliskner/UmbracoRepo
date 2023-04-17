@@ -1,0 +1,10 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@if (Model?.Where(b => b.Content is not null).ToArray() is { } blockList)
+{
+    foreach (var block in blockList)
+    {
+        <div class="container mx-auto">
+            @await Html.PartialAsync($"/Views/Partials/blocklist/{block.Content.ContentType.Alias}.cshtml", block)
+        </div>
+    }
+}

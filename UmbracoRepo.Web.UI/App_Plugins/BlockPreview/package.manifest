@@ -1,0 +1,6 @@
+{
+    "javascript": [
+        "~/App_Plugins/BlockPreview/preview.resource.js",
+        "~/App_Plugins/BlockPreview/block-preview.controller.js"
+    ]
+}

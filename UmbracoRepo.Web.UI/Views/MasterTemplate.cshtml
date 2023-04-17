@@ -1,0 +1,21 @@
+﻿@using System.Globalization
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html data-theme="corporate" lang="@CultureInfo.CurrentCulture.TwoLetterISOLanguageName">
+<head>
+	<meta-fields></meta-fields>
+	@*@await Html.PartialAsync("~/Views/Partials/seo/metaData.cshtml", Model)*@
+	@*<script src="js-bundle" type="text/javascript"></script>*@
+	<link rel="stylesheet" href="/assets/main.css" asp-append-version="true"/>
+	<render-script position="HeadBottom"></render-script>
+</head>
+<body>
+<render-script position="BodyTop"></render-script>
+@await Component.InvokeAsync("Navigation")
+@RenderBody()
+<render-script position="BodyBottom"></render-script>
+</body>
+</html>

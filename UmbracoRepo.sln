@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoRepo.Web.UI", "UmbracoRepo.Web.UI\UmbracoRepo.Web.UI.csproj", "{5595E607-B943-48AE-955D-D0D75A5140E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoRepo.Web", "UmbracoRepo.Web\UmbracoRepo.Web.csproj", "{029E6252-D383-4F98-B680-B281B27250B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5595E607-B943-48AE-955D-D0D75A5140E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5595E607-B943-48AE-955D-D0D75A5140E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5595E607-B943-48AE-955D-D0D75A5140E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5595E607-B943-48AE-955D-D0D75A5140E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029E6252-D383-4F98-B680-B281B27250B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029E6252-D383-4F98-B680-B281B27250B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029E6252-D383-4F98-B680-B281B27250B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029E6252-D383-4F98-B680-B281B27250B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
